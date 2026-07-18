@@ -23,7 +23,7 @@ export function setClick(selector, callback) {
 }
 
 export function getParam(param) {
-  const queyryString = window.location.search;
-  const urlParams = new URLSearchParams(queuryString);
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
   return urlParams.get(param);
 }

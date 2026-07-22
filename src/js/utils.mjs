@@ -22,27 +22,26 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
+
+
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  return urlParams.get(param);
+  const product = urlParams.get(param);
+  return product;
 }
 
-
-//Product list 
-
 export function renderListWithTemplate(
-  templateFn,
+  template,
   parentElement,
   list,
   position = "afterbegin",
   clear = false,
 ) {
+  const htmlStrings = list.map(template);
+  // if clear is true we need to clear out the contents of the parent.
   if (clear) {
     parentElement.innerHTML = "";
   }
-
-  const htmlStrings = list.map(templateFn);
-
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }

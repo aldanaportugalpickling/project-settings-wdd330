@@ -1,14 +1,12 @@
 [
   {
-    "message": "This is only a test",
+    "message": "Save 20% on all tents today!",
     "background": "darkblue",
     "color": "white"
   },
-
   {
-    "message": "Free shipping this weekend!",
+    "message": "Enjoy free shipping all weekend!",
     "background": "darkgreen",
     "color": "white"
   }
 ]
-

@@ -17,7 +17,7 @@ export default class ProductDetails {
       .addEventListener("click", this.addProductToCart.bind(this));
   }
 
-  addProductToCart(product) {
+  addProductToCart() {
     const cartItems = getLocalStorage("so-cart") || [];
 
     cartItems.push(this.product);
@@ -35,7 +35,7 @@ export default class ProductDetails {
 
 
 function productDetailsTemplate(product) {
-    return `<section class="product-detail">
+  return `<section class="product-detail">
 
             <h3>${product.Brand.Name}</h3>
     
@@ -58,10 +58,11 @@ function productDetailsTemplate(product) {
              </p>
 
             <div class="product-detail__add">
-                <button id="addToCart">Add to Cart</button>
+                <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
             </div></section>`;
-        
-        
 }
+
+
+
 
 

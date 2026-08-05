@@ -63,14 +63,17 @@ export default class ProductDetails {
 //}
 
 function productDetailsTemplate(product) {
+  
   document.getElementById("productBrand").textContent = product.Brand.Name;
-  document.getElementById("productName").textContent = product.NameWithoutBrand;
+  document.getElementById("productName").textContent = product.Name; 
 
   const productImage = document.getElementById("productImage");
-  productImage.src = product.Image;
-  productImage.alt = product.NameWithoutBrand;
+  productImage.src = product.Images.PrimaryMedium;
+  productImage.alt = product.Name; 
 
-  document.getElementById("productPrice").textContent = product.FinalPrice;
+ 
+   document.getElementById("productPrice").textContent =
+     `$${product.FinalPrice}`;
   document.getElementById("productColor").textContent =
     product.Colors[0].ColorName;
   document.getElementById("productDesc").innerHTML =

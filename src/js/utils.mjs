@@ -64,7 +64,6 @@ export function renderWithTemplate(
   }
 }
 
-//aunque funcione sin export el instructor nromalmente espera que este exportada
 export async function loadTemplate(path) {
   const response = await fetch(path);
   const template = await response.text();

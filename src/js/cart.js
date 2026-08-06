@@ -3,10 +3,30 @@ import { getLocalStorage, loadHeaderFooter} from "./utils.mjs";
 loadHeaderFooter();
 
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
+  const cartItems = getLocalStorage("so-cart") || [];
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+  //added to calculate subtotal
+   calculateSubtotal(cartItems);
 }
+
+
+
+
+//my code
+
+function calculateSubtotal(cartItems) {
+  const subtotal = cartItems.reduce((total, item) => {
+    return total + item.FinalPrice;
+  }, 0);
+
+  document.querySelector("#cart-subtotal").textContent =
+    `$${subtotal.toFixed(2)}`;
+}
+
+
+
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">

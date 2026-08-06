@@ -300,6 +300,149 @@ button {
   text-align: center;
 }
 
+
+.cart-summary {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+
+/* ===========================
+   Checkout Page
+=========================== */
+
+.checkout {
+  padding: 2rem;
+}
+
+.checkout h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.checkout-form form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.checkout-form fieldset {
+  border: 1.5px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-form legend {
+  font-weight: bold;
+  color: var(--tertiary-color);
+  padding: 0 .5rem;
+}
+
+.checkout__name,
+.checkout__address,
+.checkout__payment {
+  display: grid;
+  gap: .75rem;
+}
+
+.checkout__name {
+  grid-template-columns: 1fr 1fr;
+}
+
+.checkout__address,
+.checkout__payment {
+  grid-template-columns: 1fr;
+}
+
+.checkout-form label {
+  font-weight: bold;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: .6rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.checkout-summary {
+  align-self: start;
+}
+
+.order__summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem;
+}
+
+.order__summary div:nth-child(even) {
+  text-align: right;
+  font-weight: bold;
+}
+
+#checkoutSubmit {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* transición suave */
+  }
+  
+  #checkoutSubmit:hover {
+    background-color: #303030;
+    /* cambia a azul más oscuro */
+    transform: scale(1.05);
+    /* se agranda un poquito */
+  }
+
+
+
+    .checkout-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+    }
+  
+    .checkout-btn:hover {
+      background-color: #303030;
+      transform: scale(1.05);
+        /* se agranda un poquito */
+    }
+
+    
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .checkout-form form {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout__name {
+    grid-template-columns: 1fr;
+  }
+
+  #checkoutSubmit {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

@@ -7,7 +7,6 @@ const baseURL = import.meta.env.VITE_SERVER_URL;
 console.log("API URL:", baseURL);
 
 
-
 export default class ExternalServices {
   async getData(category) {
     const response = await fetch(`${baseURL}products/search/${category}`);

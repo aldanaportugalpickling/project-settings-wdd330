@@ -74,6 +74,21 @@ function productDetailsTemplate(product) {
  
    document.getElementById("productPrice").textContent =
      `$${product.FinalPrice}`;
+
+  
+  const discountFlag = document.getElementById("discountFlag");
+
+  if (product.SuggestedRetailPrice > product.FinalPrice) {
+    const discount =
+      ((product.SuggestedRetailPrice - product.FinalPrice) /
+        product.SuggestedRetailPrice) *
+      100;
+
+    discountFlag.textContent = `${Math.round(discount)}% OFF`;
+  } else {
+    discountFlag.style.display = "none";
+  }
+  
   document.getElementById("productColor").textContent =
     product.Colors[0].ColorName;
   document.getElementById("productDesc").innerHTML =

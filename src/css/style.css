@@ -170,11 +170,6 @@ button {
   width: min(100px, 90%);
 }
 
-
-
-
-
-
 .products {
   margin-top: 2rem;
   padding: 1rem;
@@ -218,8 +213,6 @@ button {
 
 /* End product list card */
 
-
-
 /*change css */
 
 /*.product-detail {
@@ -250,11 +243,9 @@ button {
   width: 100%;
 }
 
-
 .product-detail h2 {
   margin-bottom: 0.5em;
 }
-
 
 #p-price {
   font-size: 1.5em;
@@ -298,11 +289,6 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
-
-
-
-
-
 
 .discount-flag {
   background: red;

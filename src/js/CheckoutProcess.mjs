@@ -59,6 +59,9 @@ export default class CheckoutProcess {
   }
 
   calculateOrderTotal() {
+
+    console.log("Calculating total by ZIP");
+
       // calculate the shipping and tax amounts. Then use them to along with the cart total to figure out the order total
       //changed
 

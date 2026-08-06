@@ -17,6 +17,14 @@ form.addEventListener("submit", (event) => {
   order.checkout();
 });
 
+const zip = document.querySelector("#zip");
+
+zip.addEventListener("change", () => {
+ 
+  order.calculateOrderTotal();
+
+});
+
 // Add event listeners to fire calculateOrderTotal when the user changes the zip code
 //document
   //.querySelector("#zip")

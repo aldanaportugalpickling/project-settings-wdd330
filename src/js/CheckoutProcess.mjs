@@ -124,7 +124,7 @@ export default class CheckoutProcess {
       console.log(response);
 
       //adde temporalmente aaaaaaa
-      alert("PROCEDD TO CHECKOUT");
+      alert("PROCEED TO CHECKOUT");
 
 
       //added my code 

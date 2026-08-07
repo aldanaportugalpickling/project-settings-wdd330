@@ -1,5 +1,6 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, alertMessage, removeAllAlerts } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
+
 
 const services = new ExternalServices();
 
@@ -121,8 +122,34 @@ export default class CheckoutProcess {
     try {
       const response = await services.checkout(order);
       console.log(response);
+
+      //adde temporalmente aaaaaaa
+      alert("PROCEDD TO CHECKOUT");
+
+
+      //added my code 
+      //empty my cart
+      localStorage.removeItem(this.key);
+
+      //go to the success page
+      window.location.href = ("success.html");
     } catch (err) {
+
+      //added temporarily to see the error in the console
+      
+       //console.log("ERROR COMPLETO:", err);
+      //console.log("ERROR MESSAGE:", err.message);
+      
+      console.log("ERROR COMPLETO:", JSON.stringify(err, null, 2));
+      console.log("ERROR MESSAGE:", JSON.stringify(err.message, null, 2));
+
+      //teacher 
+       removeAllAlerts();
+       for (let message in err.message) {
+         alertMessage(err.message[message]);
+       }
       console.log(err);
+
     }
   }
 }

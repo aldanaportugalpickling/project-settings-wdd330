@@ -4,11 +4,18 @@ loadHeaderFooter();
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart") || [];
+
+
+  //console.log(cartItems);
+
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
   //added to calculate subtotal
-   calculateSubtotal(cartItems);
+  calculateSubtotal(cartItems);
+  
+  //added to add event listeners to remove buttons
+  addRemoveListeners();
 }
 
 
@@ -30,6 +37,12 @@ function calculateSubtotal(cartItems) {
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
+
+   <button class="remove-item" data-id="${item.Id}">
+       🗑 Remove
+    </button>
+
+
   <a href="#" class="cart-card__image">
     <img
       src="${item.Images.PrimaryMedium}"
@@ -48,3 +61,23 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
+
+////added to add event listeners to remove buttons
+function addRemoveListeners() {
+  const removeButtons = document.querySelectorAll(".remove-item");
+
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.id;
+
+      let cartItems = getLocalStorage("so-cart") || [];
+
+      cartItems = cartItems.filter((item) => item.Id !== productId);
+
+      localStorage.setItem("so-cart", JSON.stringify(cartItems));
+
+      renderCartContents();
+    });
+  });
+}

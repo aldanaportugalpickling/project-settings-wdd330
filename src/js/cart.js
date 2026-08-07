@@ -38,7 +38,7 @@ function calculateSubtotal(cartItems) {
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
 
-   <button class="remove-item" data-id="${item.Id}">
+   <button class="remove-item" data-id="${item.Id}" >
        🗑 Remove
     </button>
 
@@ -73,8 +73,14 @@ function addRemoveListeners() {
 
       let cartItems = getLocalStorage("so-cart") || [];
 
-      cartItems = cartItems.filter((item) => item.Id !== productId);
+      //cartItems = cartItems.filter((item) => item.Id !== productId);
 
+
+      const index = cartItems.findIndex((item) => item.Id === productId);
+
+      if (index !== -1) {
+        cartItems.splice(index, 1);
+      }
       localStorage.setItem("so-cart", JSON.stringify(cartItems));
 
       renderCartContents();

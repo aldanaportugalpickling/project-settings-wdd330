@@ -63,14 +63,10 @@ export default class CheckoutProcess {
 
     console.log("Calculating total by ZIP");
 
-      // calculate the shipping and tax amounts. Then use them to along with the cart total to figure out the order total
-      //changed
-
-      //this.tax = this.itemTotal * 0.06;
+    
       
       this.tax = Number((this.itemTotal * 0.06).toFixed(2));
-      //this.shipping = 10 + (this.list.length - 1) * 2;
-      //reemplazamos porque lo correcto seria 
+     
 
       if (this.list.length > 0) {
         this.shipping = 10 + (this.list.length - 1) * 2;
@@ -79,11 +75,6 @@ export default class CheckoutProcess {
       }
 
 
-    //this.orderTotal =
-      //parseFloat(this.itemTotal) +
-      //parseFloat(this.tax) +
-      //parseFloat(this.shipping);
-      // display the totals.
       
       //ROUND 2 DIGITS 
       this.orderTotal = Number(
